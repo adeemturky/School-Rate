@@ -1,0 +1,54 @@
+<%- include('../partials/header') -%>
+<div class="form-container">
+    <div class="form-content">
+    <h1>Edit Rate</h1>
+    <form action="/flowers/<%= flower._id %>" method="POST" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <td>
+                    <label for="type">Name:</label>
+                </td>
+                <td>
+                    <input type="text" id="type" name="type" value="<%= flower.name %>" required><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Rate">Rate:</label>
+                </td>
+                <td>
+                    <input type="number" id="quantity" name="quantity" value="<%= flower.rate %>" required><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="description">Description:</label>
+                </td>
+                <td>
+                    <textarea id="description" name="description"> <%= flower.description %></textarea> <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="image">Current Image:</label><br>
+                </td>
+                <td>
+                    <img src="<%= flower.imagePath %>" alt="Flower Image" width="100"><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="image">Change Image (optional):</label>
+                </td>
+                <td>
+                    <input type="file" id="image" name="image">
+                </td>
+            </tr>
+        </table>
+        <button type="submit">Update</button>
+    </form>
+    <br>
+    <a href="/">Back to Home</a>
+    </div></div>
+    <%- include('../partials/footer') -%>
+
