@@ -1,0 +1,20 @@
+<%- include('../partials/header') -%>
+
+    <div class="container">
+        <% flowers.forEach(flower => { %>
+            <div class="card">
+                <img src="<%= flower.imagePath %>" alt="Flower Image">
+                <h2><%= flower.name %></h2>
+                <p>Price: <%= flower.rate %></p>
+
+                <form action="/flowers/<%= flower._id %>/edit">
+                    <button type="submit">Add new Rate</button>
+                </form>
+                
+                <form action="/flowers/<%= flower._id %>/delete" method="POST">
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+        <% }) %>
+    </div>
+
